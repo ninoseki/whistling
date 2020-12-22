@@ -11,7 +11,7 @@ install:
   - poetry install
 
 script:
-  - pytest -v --cov=iocingestor --cov-report=term-missing
+  - pytest -v --cov=whistling --cov-report=term-missing
 
 after_success:
   - coveralls
