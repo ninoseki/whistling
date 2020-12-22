@@ -4,10 +4,12 @@ version = "0.1.0"
 description = "A collection of functions to report a malicious URL"
 authors = ["Manabu Niseki <manabu.niseki@gmail.com>"]
 license = "MIT"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.7"
 httpx = "^0.16.1"
+contextvars = "^2.4"
 
 [tool.poetry.dev-dependencies]
 black = "^20.8b1"
