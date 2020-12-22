@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"brand": "PayPal", "url": "http://scurdepypl.hekpdekskvauthadmine.com/",
+      "confidence_level": 100, "date_discovered": 1608519733}'
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '129'
+      content-type:
+      - application/json
+      host:
+      - api.ecrimex.net
+      user-agent:
+      - python-httpx/0.16.1
+    method: POST
+    uri: https://api.ecrimex.net/phish
+  response:
+    content: '{"_meta":{"contact":"support@ecrimex.net","version":"5.2.0","changelog_url":"https:\/\/ecrimex.net\/api\/changelog","documentation":"https:\/\/ecrimex.net\/api","request_id":"c81b31f8-1470-4956-a1e1-33605d9c71e4","execution_time":"0.1839","generated_at":1608519734,"notes":["the
+      `Authorization` header authentication method is deprecated as of v5.2 in favor
+      of the `X-API-Token` header, and will be removed in a later release. The `X-API-Token`
+      header is not yet supported, but will be in the next major version release"]},"_links":{"self":{"href":"\/phish\/92960624"},"activities":{"href":"\/phish\/92960624\/activity"}},"id":92960624,"url":"http:\/\/scurdepypl.hekpdekskvauthadmine.com\/","brand":"PayPal","confidence_level":100,"date_discovered":1608519733,"modified":1608519733,"asn":[],"ip":[],"domain":"scurdepypl.hekpdekskvauthadmine.com","metadata":{"submission_count":1},"status":""}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization, User-Agent, Accept, Accept-Language, Accept-Encoding, Referer,
+        Origin, Host, Content-Type
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS, DELETE, PUT, PATCH
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - Request-Id, Content-Type, Allow, Location, Content-Length
+      Connection:
+      - Keep-Alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 21 Dec 2020 03:02:13 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Request-Id:
+      - c81b31f8-1470-4956-a1e1-33605d9c71e4
+      Server:
+      - Apache/2.4.18 (Ubuntu)
+      Transfer-Encoding:
+      - chunked
+    http_version: HTTP/1.1
+    status_code: 201
+version: 1

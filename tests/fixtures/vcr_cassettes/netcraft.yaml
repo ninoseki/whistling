@@ -1,0 +1,52 @@
+interactions:
+  - request:
+      body:
+        '{"urls": ["http://secure2.verification-personal-information.ini-ippat-jatim.or.id"],
+        "email": "foo@example.com"}'
+      headers:
+        accept:
+          - "*/*"
+        accept-encoding:
+          - gzip, deflate
+        connection:
+          - keep-alive
+        content-length:
+          - "115"
+        content-type:
+          - application/json
+        host:
+          - report.netcraft.com
+        user-agent:
+          - python-httpx/0.16.1
+      method: POST
+      uri: https://report.netcraft.com/api/v2/report/urls
+    response:
+      content: '{"message":"Successfully reported","uuid":"H8g6TiVFLvAyjgsb9B7XkQe0bY2Fqnc1"}'
+      headers:
+        Cache-Control:
+          - max-age=0, no-cache, no-store, must-revalidate
+        Connection:
+          - keep-alive
+        Content-Encoding:
+          - gzip
+        Content-Type:
+          - application/json;charset=UTF-8
+        Date:
+          - Mon, 21 Dec 2020 04:19:58 GMT
+        Pragma:
+          - no-cache
+        Server:
+          - nginx
+        Strict-Transport-Security:
+          - max-age=31536000
+        Transfer-Encoding:
+          - chunked
+        X-Content-Type-Options:
+          - nosniff
+        X-Frame-Options:
+          - DENY
+        X-XSS-Protection:
+          - 1; mode=block
+      http_version: HTTP/1.1
+      status_code: 200
+version: 1

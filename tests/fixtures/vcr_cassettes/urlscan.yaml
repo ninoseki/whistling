@@ -1,0 +1,82 @@
+interactions:
+- request:
+    body: '{"url": "http://payplint.com.supports-billings.com/admin"}'
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '58'
+      content-type:
+      - application/json
+      host:
+      - urlscan.io
+      user-agent:
+      - python-httpx/0.16.1
+    method: POST
+    uri: https://urlscan.io/api/v1/scan/
+  response:
+    content: "{\n  \"message\": \"Submission successful\",\n  \"uuid\": \"538a597e-be68-4679-92f0-aef05a71f988\"\
+      ,\n  \"result\": \"https://urlscan.io/result/538a597e-be68-4679-92f0-aef05a71f988/\"\
+      ,\n  \"api\": \"https://urlscan.io/api/v1/result/538a597e-be68-4679-92f0-aef05a71f988/\"\
+      ,\n  \"visibility\": \"private\",\n  \"options\": {\n    \"useragent\": \"Mozilla/5.0\
+      \ (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko)\
+      \ Chrome/83.0.4103.61 Safari/537.36\"\n  },\n  \"url\": \"http://payplint.com.supports-billings.com/admin\"\
+      \n}"
+    headers:
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Security-Policy:
+      - 'default-src ''self'' data: ; script-src ''self'' data: developers.google.com
+        www.google.com www.gstatic.com secure.wufoo.com; style-src ''self'' ''unsafe-inline''
+        fonts.googleapis.com www.google.com; img-src *; font-src ''self'' fonts.gstatic.com;
+        child-src ''self''; frame-src https://www.google.com/recaptcha/ secure.wufoo.com
+        securitytrails.wufoo.com; form-action ''self''; upgrade-insecure-requests;'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 22 Dec 2020 06:49:58 GMT
+      ETag:
+      - W/"1f3-AesWG8OSZIIdxRAxULzoUy6hDOg"
+      Referrer-Policy:
+      - unsafe-url
+      Server:
+      - nginx
+      Set-Cookie:
+      - sid=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; Secure; SameSite=Lax
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubdomains; preload
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Rate-Limit-Action:
+      - private
+      X-Rate-Limit-Limit:
+      - '120'
+      X-Rate-Limit-Remaining:
+      - '120'
+      X-Rate-Limit-Reset:
+      - '2020-12-22T06:50:00.000Z'
+      X-Rate-Limit-Reset-After:
+      - '1'
+      X-Rate-Limit-Scope:
+      - user
+      X-Rate-Limit-Window:
+      - minute
+      X-Robots-Tag:
+      - all
+      X-XSS-Protection:
+      - 1; mode=block
+    http_version: HTTP/1.1
+    status_code: 200
+version: 1
