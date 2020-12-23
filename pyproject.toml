@@ -9,7 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.7"
 httpx = "^0.16.1"
-contextvars = "^2.4"
+contextvars = {version = "^2.4", python = "<= 3.7"}
 
 [tool.poetry.dev-dependencies]
 black = "^20.8b1"
