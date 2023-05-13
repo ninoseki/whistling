@@ -2,7 +2,6 @@
 Reporter class for APWG's eCX
 """
 from datetime import datetime
-from typing import Optional
 
 import httpx
 
@@ -16,9 +15,9 @@ def current_time() -> int:
 
 def build_payload(
     url: str,
-    brand: Optional[str] = None,
-    confidence_level: Optional[int] = None,
-    date_discovered: Optional[int] = None,
+    brand: str | None = None,
+    confidence_level: int | None = None,
+    date_discovered: int | None = None,
 ):
     return {
         "brand": brand or "",
@@ -30,10 +29,15 @@ def build_payload(
 
 class ECX(AbstractReporter):
     def __init__(
-        self, token: str, base_url: str = "https://api.ecrimex.net/phish",
+        self,
+        token: str,
+        *,
+        base_url: str = "https://api.ecrimex.net/phish",
     ):
         self.base_url = base_url
         self.token = token
+
+        assert self.token is not None
 
     def report(self, url: str, **kwargs) -> httpx.Response:
         """Report the URL to eCX
@@ -49,11 +53,9 @@ class ECX(AbstractReporter):
         Returns:
             httpx.Response: A response from eCX
         """
-        assert self.token is not None
-
-        brand: Optional[str] = kwargs.get("brand", None)
-        date_discovered: Optional[int] = kwargs.get("date_discovered", None)
-        confidence_level: Optional[int] = kwargs.get("confidence_level", None)
+        brand: str | None = kwargs.get("brand", None)
+        date_discovered: int | None = kwargs.get("date_discovered", None)
+        confidence_level: int | None = kwargs.get("confidence_level", None)
 
         payload = build_payload(
             url=url,
