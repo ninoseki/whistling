@@ -1,10 +1,8 @@
-"""
-Root of `whistling` source code.
-"""
-from whistling.ecx import ECX
-from whistling.gsb import GSB
-from whistling.netcraft import Netcraft
-from whistling.urlscan import URLScan
+import importlib.metadata
 
-__version__ = "0.1.0"
-__all__ = ["__version__", "ECX", "GSB", "Netcraft", "URLScan"]
+from .ecx import ECX  # noqa: F401
+from .gsb import GSB  # noqa: F401
+from .netcraft import Netcraft  # noqa: F401
+from .urlscan import URLScan  # noqa: F401
+
+__version__ = importlib.metadata.version(__name__)

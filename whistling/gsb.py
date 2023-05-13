@@ -1,7 +1,6 @@
 """
 Reporter class for Google Safe Browsing
 """
-from typing import List, Optional
 
 import httpx
 
@@ -10,9 +9,9 @@ from whistling.abstract_reporter import AbstractReporter
 
 def build_payload(
     url: str,
-    screenshot: Optional[str] = None,
-    dom: Optional[str] = None,
-    flags: Optional[List[str]] = None,
+    screenshot: str | None = None,
+    dom: str | None = None,
+    flags: list[str] | None = None,
 ) -> list:
     return [url, None, screenshot, dom, None, flags]
 
@@ -20,8 +19,9 @@ def build_payload(
 class GSB(AbstractReporter):
     def __init__(
         self,
+        token: str | None = None,
+        *,
         base_url: str = "https://safebrowsing.google.com/safebrowsing/clientreport/crx-report",
-        _=None,
     ):
         self.base_url = base_url
 
@@ -39,9 +39,9 @@ class GSB(AbstractReporter):
         Returns:
             httpx.Response: A response from Google Safe Browsing
         """
-        screenshot: Optional[str] = kwargs.get("screenshot", None)
-        dom: Optional[str] = kwargs.get("dom", None)
-        flags: Optional[List[str]] = kwargs.get("flags", None)
+        screenshot: str | None = kwargs.get("screenshot", None)
+        dom: str | None = kwargs.get("dom", None)
+        flags: list[str] | None = kwargs.get("flags", None)
 
         payload = build_payload(url, screenshot=screenshot, dom=dom, flags=flags)
 

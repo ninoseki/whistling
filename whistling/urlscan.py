@@ -1,7 +1,6 @@
 """
 Reporter class for urlscan.io
 """
-from typing import Optional
 
 import httpx
 
@@ -10,9 +9,9 @@ from whistling.abstract_reporter import AbstractReporter
 
 def build_payload(
     url: str,
-    customagent: Optional[str] = None,
-    referer: Optional[str] = None,
-    visibility: Optional[str] = None,
+    customagent: str | None = None,
+    referer: str | None = None,
+    visibility: str | None = None,
 ) -> dict:
     d = {
         "url": url,
@@ -25,10 +24,15 @@ def build_payload(
 
 class URLScan(AbstractReporter):
     def __init__(
-        self, token: str, base_url: str = "https://urlscan.io/api/v1/scan/",
+        self,
+        token: str,
+        *,
+        base_url: str = "https://urlscan.io/api/v1/scan/",
     ):
         self.base_url = base_url
         self.token = token
+
+        assert self.token is not None
 
     def report(self, url: str, **kwargs) -> httpx.Response:
         """[summary]
@@ -44,11 +48,9 @@ class URLScan(AbstractReporter):
         Returns:
             httpx.Response: [description]
         """
-        assert self.token is not None
-
-        customagent: Optional[str] = kwargs.get("customagent", None)
-        referer: Optional[str] = kwargs.get("referer", None)
-        visibility: Optional[str] = kwargs.get("visibility", None)
+        customagent: str | None = kwargs.get("customagent", None)
+        referer: str | None = kwargs.get("referer", None)
+        visibility: str | None = kwargs.get("visibility", None)
 
         payload = build_payload(
             url=url, customagent=customagent, referer=referer, visibility=visibility
